@@ -57,7 +57,7 @@ export default async function CanadaLandingPage() {
             </p>
           </div>
 
-          <div className="w-full rounded-2xl border-2 border-teal/40 bg-surface p-6 shadow-xl shadow-navy/20 ring-1 ring-teal/30">
+          <div className="w-full rounded-2xl border-2 border-teal/35 bg-surface p-6 shadow-xl shadow-navy/15 ring-1 ring-gold/40">
             <h2 className="text-xl font-semibold text-foreground">
               Choose a province
             </h2>
@@ -88,42 +88,47 @@ export default async function CanadaLandingPage() {
             </p>
           </div>
 
-          <div className="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-xl border-2 border-teal/30 bg-surface p-4 text-center shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-wide text-teal">
-                Provinces &amp; territories
-              </p>
-              <p className="mt-2 text-2xl font-semibold text-foreground">
-                {caNationwide.provinceCount.toLocaleString()}
-              </p>
+          <section
+            aria-label="Canada directory statistics"
+            className="w-full rounded-2xl border border-teal/25 bg-surface p-5 shadow-sm sm:p-6"
+          >
+            <div className="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="rounded-xl border border-teal/25 bg-surface-muted p-4 text-center shadow-sm">
+                <p className="text-xs font-semibold uppercase tracking-wide text-teal">
+                  Provinces &amp; territories
+                </p>
+                <p className="mt-2 text-2xl font-semibold text-foreground">
+                  {caNationwide.provinceCount.toLocaleString()}
+                </p>
+              </div>
+              <div className="rounded-xl border border-teal/25 bg-surface-muted p-4 text-center shadow-sm">
+                <p className="text-xs font-semibold uppercase tracking-wide text-teal">
+                  Verified salons
+                </p>
+                <p className="mt-2 text-2xl font-semibold text-foreground">
+                  {caNationwide.totalFacilities.toLocaleString()}
+                </p>
+              </div>
+              <div className="rounded-xl border border-teal/25 bg-surface-muted p-4 text-center shadow-sm">
+                <p className="text-xs font-semibold uppercase tracking-wide text-teal">
+                  Cities covered
+                </p>
+                <p className="mt-2 text-2xl font-semibold text-foreground">
+                  {caNationwide.totalCities.toLocaleString()}
+                </p>
+              </div>
+              <div className="rounded-xl border border-teal/25 bg-surface-muted p-4 text-center shadow-sm">
+                <p className="text-xs font-semibold uppercase tracking-wide text-teal">
+                  Average rating
+                </p>
+                <p className="mt-2 text-2xl font-semibold text-foreground">
+                  {caNationwide.averageRating != null
+                    ? `${caNationwide.averageRating}★`
+                    : "—"}
+                </p>
+              </div>
             </div>
-            <div className="rounded-xl border-2 border-teal/30 bg-surface p-4 text-center shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-wide text-teal">
-                Verified salons
-              </p>
-              <p className="mt-2 text-2xl font-semibold text-foreground">
-                {caNationwide.totalFacilities.toLocaleString()}
-              </p>
-            </div>
-            <div className="rounded-xl border-2 border-teal/30 bg-surface p-4 text-center shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-wide text-teal">
-                Cities covered
-              </p>
-              <p className="mt-2 text-2xl font-semibold text-foreground">
-                {caNationwide.totalCities.toLocaleString()}
-              </p>
-            </div>
-            <div className="rounded-xl border-2 border-teal/30 bg-surface p-4 text-center shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-wide text-teal">
-                Average rating
-              </p>
-              <p className="mt-2 text-2xl font-semibold text-foreground">
-                {caNationwide.averageRating != null
-                  ? `${caNationwide.averageRating}★`
-                  : "—"}
-              </p>
-            </div>
-          </div>
+          </section>
         </div>
       </section>
 

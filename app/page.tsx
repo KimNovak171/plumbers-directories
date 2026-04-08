@@ -72,83 +72,88 @@ export default async function Home() {
       />
       <section className="bg-surface">
         <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
-          <div className="space-y-6 rounded-2xl bg-brand-gradient px-6 py-8 text-brand-ink shadow-sm sm:px-8 sm:py-10">
-            <p className="inline-flex rounded-full border border-brand-ink/20 bg-white/35 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] backdrop-blur-sm">
-              Nail Salon Directories
-            </p>
-            <h1 className="text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
-              Find Trusted Nail Salons — US States &amp; Canadian Provinces
-            </h1>
-            <p className="max-w-2xl text-balance text-sm sm:text-base text-brand-ink/85">
-              Verified nail salons, nail technicians, and manicurists across the United States and Canada—browse by
-              state or province, then by city. Every listing rated 3★ or higher
-              on Google Maps.
-            </p>
-          </div>
+          <div className="flex flex-col gap-6">
+            <div className="space-y-6 rounded-2xl bg-brand-gradient px-6 py-8 text-brand-ink shadow-sm sm:px-8 sm:py-10">
+              <p className="inline-flex rounded-full border border-brand-ink/20 bg-white/35 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] backdrop-blur-sm">
+                Nail Salon Directories
+              </p>
+              <h1 className="text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+                Find Trusted Nail Salons — US States &amp; Canadian Provinces
+              </h1>
+              <p className="max-w-2xl text-balance text-sm sm:text-base text-brand-ink/85">
+                Verified nail salons, nail technicians, and manicurists across the United States and Canada—browse by
+                state or province, then by city. Every listing rated 3★ or higher
+                on Google Maps.
+              </p>
+            </div>
 
-          <section className="w-full border-y-2 border-teal/30 bg-surface">
-            <div
-              className={`mx-auto grid max-w-6xl gap-4 px-4 py-8 sm:grid-cols-2 sm:px-6 lg:px-8 ${
-                canadaNationwide.totalFacilities > 0
-                  ? "lg:grid-cols-5"
-                  : "lg:grid-cols-4"
-              }`}
+            <section
+              aria-label="Directory statistics"
+              className="w-full rounded-2xl border border-teal/25 bg-surface p-5 shadow-sm sm:p-6"
             >
-              <div className="rounded-xl border-2 border-teal/30 bg-surface p-4 text-center shadow-sm">
-                <p className="text-xs font-semibold uppercase tracking-wide text-teal">
-                  Verified salons
-                </p>
-                <p className="mt-2 text-2xl font-semibold text-foreground">
-                  {globalStats.totalFacilities.toLocaleString()}
-                </p>
-                {canadaNationwide.totalFacilities > 0 && (
-                  <p className="mt-1 text-xs text-foreground/70">
-                    US + Canada combined
-                  </p>
-                )}
-              </div>
-              {canadaNationwide.totalFacilities > 0 && (
-                <div className="rounded-xl border-2 border-teal/30 bg-surface p-4 text-center shadow-sm">
+              <div
+                className={`mx-auto grid w-full gap-4 sm:grid-cols-2 ${
+                  canadaNationwide.totalFacilities > 0
+                    ? "lg:grid-cols-5"
+                    : "lg:grid-cols-4"
+                }`}
+              >
+                <div className="rounded-xl border border-teal/25 bg-surface-muted p-4 text-center shadow-sm">
                   <p className="text-xs font-semibold uppercase tracking-wide text-teal">
-                    Canadian salons
+                    Verified salons
                   </p>
                   <p className="mt-2 text-2xl font-semibold text-foreground">
-                    {canadaNationwide.totalFacilities.toLocaleString()}
+                    {globalStats.totalFacilities.toLocaleString()}
                   </p>
-                  <p className="mt-1 text-xs text-foreground/70">
-                    {canadaNationwide.provinceCount.toLocaleString()} provinces
-                    &amp; territories
+                  {canadaNationwide.totalFacilities > 0 && (
+                    <p className="mt-1 text-xs text-foreground/70">
+                      US + Canada combined
+                    </p>
+                  )}
+                </div>
+                {canadaNationwide.totalFacilities > 0 && (
+                  <div className="rounded-xl border border-teal/25 bg-surface-muted p-4 text-center shadow-sm">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-teal">
+                      Canadian salons
+                    </p>
+                    <p className="mt-2 text-2xl font-semibold text-foreground">
+                      {canadaNationwide.totalFacilities.toLocaleString()}
+                    </p>
+                    <p className="mt-1 text-xs text-foreground/70">
+                      {canadaNationwide.provinceCount.toLocaleString()} provinces
+                      &amp; territories
+                    </p>
+                  </div>
+                )}
+                <div className="rounded-xl border border-teal/25 bg-surface-muted p-4 text-center shadow-sm">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-teal">
+                    Cities Covered
+                  </p>
+                  <p className="mt-2 text-2xl font-semibold text-foreground">
+                    {globalStats.totalCities.toLocaleString()}
                   </p>
                 </div>
-              )}
-              <div className="rounded-xl border-2 border-teal/30 bg-surface p-4 text-center shadow-sm">
-                <p className="text-xs font-semibold uppercase tracking-wide text-teal">
-                  Cities Covered
-                </p>
-                <p className="mt-2 text-2xl font-semibold text-foreground">
-                  {globalStats.totalCities.toLocaleString()}
-                </p>
+                <div className="rounded-xl border border-teal/25 bg-surface-muted p-4 text-center shadow-sm">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-teal">
+                    Average Rating
+                  </p>
+                  <p className="mt-2 text-2xl font-semibold text-foreground">
+                    {globalStats.averageRating != null
+                      ? `${globalStats.averageRating}★`
+                      : "—"}
+                  </p>
+                </div>
+                <div className="rounded-xl border border-teal/25 bg-surface-muted p-4 text-center shadow-sm">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-teal">
+                    Quality Standard
+                  </p>
+                  <p className="mt-2 text-2xl font-semibold text-foreground">3★ Minimum</p>
+                </div>
               </div>
-              <div className="rounded-xl border-2 border-teal/30 bg-surface p-4 text-center shadow-sm">
-                <p className="text-xs font-semibold uppercase tracking-wide text-teal">
-                  Average Rating
-                </p>
-                <p className="mt-2 text-2xl font-semibold text-foreground">
-                  {globalStats.averageRating != null
-                    ? `${globalStats.averageRating}★`
-                    : "—"}
-                </p>
-              </div>
-              <div className="rounded-xl border-2 border-teal/30 bg-surface p-4 text-center shadow-sm">
-                <p className="text-xs font-semibold uppercase tracking-wide text-teal">
-                  Quality Standard
-                </p>
-                <p className="mt-2 text-2xl font-semibold text-foreground">3★ Minimum</p>
-              </div>
-            </div>
-          </section>
+            </section>
+          </div>
 
-          <div className="w-full rounded-2xl border-2 border-teal/40 bg-surface p-6 shadow-xl shadow-navy/20 ring-1 ring-teal/30">
+          <div className="w-full rounded-2xl border-2 border-teal/35 bg-surface p-6 shadow-xl shadow-navy/15 ring-1 ring-gold/40">
             <h2 className="text-xl font-semibold text-foreground">
               Start with a state directory
             </h2>
