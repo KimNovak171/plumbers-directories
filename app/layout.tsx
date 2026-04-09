@@ -16,29 +16,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nailsalondirectories.com"),
+  metadataBase: new URL("https://tattooshopdirectories.com"),
   title: {
-    default: "NailSalonDirectories.com | Nail Salon Directory",
-    template: "%s | NailSalonDirectories.com",
+    default: "TattooShopDirectories.com | Tattoo Shop Directory",
+    template: "%s | TattooShopDirectories.com",
   },
   description:
-    "NailSalonDirectories.com is a professional, easy-to-use nail salon directory helping clients find local nail salons, nail technicians, manicurists, manicures, and pedicures across the United States and Canada.",
+    "TattooShopDirectories.com is a professional, easy-to-use tattoo shop directory helping clients find local tattoo shops, tattoo artists, tattoos, and body art across the United States and Canada.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "NailSalonDirectories.com | Nail Salon Directory",
+    title: "TattooShopDirectories.com | Tattoo Shop Directory",
     description:
-      "Trusted resource to explore and compare nail salons, manicures, and pedicures across North America.",
+      "Trusted resource to explore and compare tattoo shops, tattoo artists, tattoos, and body art across North America.",
     url: "/",
-    siteName: "NailSalonDirectories.com",
+    siteName: "TattooShopDirectories.com",
     type: "website",
     images: [
       {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "NailSalonDirectories.com logo preview",
+        alt: "TattooShopDirectories.com logo preview",
       },
     ],
   },
@@ -82,15 +82,15 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="flex min-h-screen flex-col bg-surface-muted text-foreground">
-          <header className="bg-brand-gradient w-full border-b-[3px] border-brand-champagne/50 text-brand-ink">
+          <header className="bg-brand-gradient w-full border-b-[3px] border-brand-champagne/60 text-brand-ink">
             <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
               <div className="flex items-center gap-6">
                 <Link
                   href="/"
                   className="text-[11px] font-bold tracking-[0.28em] sm:text-xs text-brand-ink transition-colors hover:opacity-80"
-                  aria-label="NailSalonDirectories.com – go to homepage"
+                  aria-label="TattooShopDirectories.com – go to homepage"
                 >
-                  NailSalonDirectories.com
+                  TattooShopDirectories.com
                 </Link>
                 <nav className="flex items-center gap-4" aria-label="Main navigation">
                   <Link
@@ -113,14 +113,14 @@ export default async function RootLayout({
                   </Link>
                   <Link
                     href="/advertise"
-                    className="inline-flex items-center rounded-full border border-brand-ink/20 bg-white/45 px-4 py-2 text-xs font-semibold text-brand-ink shadow-sm backdrop-blur-sm transition hover:bg-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-champagne focus-visible:ring-offset-2 focus-visible:ring-offset-surface-muted"
+                    className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold text-white shadow-sm backdrop-blur-sm transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-champagne focus-visible:ring-offset-2 focus-visible:ring-offset-surface-muted"
                   >
                     Advertise
                   </Link>
                 </nav>
               </div>
               <p className="ml-4 hidden max-w-xs text-right text-xs text-brand-ink/85 sm:block">
-                Trusted nail salon directory for clients choosing their next appointment.
+                Trusted tattoo shop directory for clients choosing their next piece.
               </p>
             </div>
           </header>
@@ -200,7 +200,7 @@ export default async function RootLayout({
           <footer className="w-full border-t border-teal/10 bg-surface">
             <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-5 text-xs text-foreground/80 sm:px-6 lg:px-8">
               <p>
-                © {new Date().getFullYear()} NailSalonDirectories.com. For
+                © {new Date().getFullYear()} TattooShopDirectories.com. For
                 informational purposes only – always verify licensing,
                 certifications, and safety requirements with your local authority.
               </p>
@@ -218,7 +218,7 @@ export default async function RootLayout({
                   Advertise
                 </Link>
                 <Link href="/advertise" className="hover:text-teal-soft">
-                  For salons &amp; nail technicians
+                  For tattoo shops &amp; artists
                 </Link>
                 <Link href="/advertise" className="hover:text-teal-soft">
                   Featured Listing

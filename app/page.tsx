@@ -10,8 +10,8 @@ import { getDirectoryIndex, getStateSummary, getGlobalStats } from "@/lib/stateF
 export async function generateMetadata(): Promise<Metadata> {
   const stats = getGlobalStats();
   const total = stats.totalFacilities.toLocaleString();
-  const title = `Nail Salon Directory USA & Canada | ${total} verified salons`;
-  const description = `Browse ${total} verified nail salons across the United States and Canada — all rated 3 stars or higher on Google Maps.`;
+  const title = `Tattoo Shop Directory USA & Canada | ${total} verified shops`;
+  const description = `Browse ${total} verified tattoo shops across the United States and Canada — all rated 3 stars or higher on Google Maps.`;
 
   return {
     title,
@@ -23,14 +23,14 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       url: "/",
-      siteName: "NailSalonDirectories.com",
+      siteName: "TattooShopDirectories.com",
       type: "website",
       images: [
         {
           url: "/og-image.svg",
           width: 1200,
           height: 630,
-          alt: "NailSalonDirectories.com homepage preview",
+          alt: "TattooShopDirectories.com home preview",
         },
       ],
     },
@@ -58,8 +58,8 @@ export default async function Home() {
       {
         "@type": "ListItem",
         position: 1,
-        name: "NailSalonDirectories.com",
-        item: "https://nailsalondirectories.com/",
+        name: "TattooShopDirectories.com",
+        item: "https://tattooshopdirectories.com/",
       },
     ],
   };
@@ -73,20 +73,6 @@ export default async function Home() {
       <section className="bg-surface">
         <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
           <div className="flex flex-col gap-6">
-            <div className="space-y-6 rounded-2xl bg-brand-gradient px-6 py-8 text-brand-ink shadow-sm sm:px-8 sm:py-10">
-              <p className="inline-flex rounded-full border border-brand-ink/20 bg-white/35 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] backdrop-blur-sm">
-                Nail Salon Directories
-              </p>
-              <h1 className="text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
-                Find Trusted Nail Salons — US States &amp; Canadian Provinces
-              </h1>
-              <p className="max-w-2xl text-balance text-sm sm:text-base text-brand-ink/85">
-                Verified nail salons, nail technicians, and manicurists across the United States and Canada—browse by
-                state or province, then by city. Every listing rated 3★ or higher
-                on Google Maps.
-              </p>
-            </div>
-
             <section
               aria-label="Directory statistics"
               className="w-full rounded-2xl border border-teal/25 bg-surface p-5 shadow-sm sm:p-6"
@@ -100,7 +86,7 @@ export default async function Home() {
               >
                 <div className="rounded-xl border border-teal/25 bg-surface-muted p-4 text-center shadow-sm">
                   <p className="text-xs font-semibold uppercase tracking-wide text-teal">
-                    Verified salons
+                    Verified shops
                   </p>
                   <p className="mt-2 text-2xl font-semibold text-foreground">
                     {globalStats.totalFacilities.toLocaleString()}
@@ -114,7 +100,7 @@ export default async function Home() {
                 {canadaNationwide.totalFacilities > 0 && (
                   <div className="rounded-xl border border-teal/25 bg-surface-muted p-4 text-center shadow-sm">
                     <p className="text-xs font-semibold uppercase tracking-wide text-teal">
-                      Canadian salons
+                      Canadian shops
                     </p>
                     <p className="mt-2 text-2xl font-semibold text-foreground">
                       {canadaNationwide.totalFacilities.toLocaleString()}
@@ -151,6 +137,20 @@ export default async function Home() {
                 </div>
               </div>
             </section>
+
+            <div className="space-y-6 rounded-2xl bg-brand-gradient px-6 py-8 text-brand-ink shadow-sm sm:px-8 sm:py-10">
+              <p className="inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] backdrop-blur-sm">
+                Tattoo Shop Directories
+              </p>
+              <h1 className="text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+                Find Trusted Tattoo Shops — US States &amp; Canadian Provinces
+              </h1>
+              <p className="max-w-2xl text-balance text-sm sm:text-base text-white/85">
+                Verified tattoo shops, tattoo artists, and body art studios across the United States and Canada—browse by
+                state or province, then by city. Every listing rated 3★ or higher
+                on Google Maps.
+              </p>
+            </div>
           </div>
 
           <div className="w-full rounded-2xl border-2 border-teal/40 bg-surface p-6 shadow-xl shadow-navy/20 ring-1 ring-teal/30">
@@ -158,7 +158,7 @@ export default async function Home() {
               Start with a state directory
             </h2>
             <p className="mt-2 text-sm text-foreground/90">
-              Browse verified salons by state, then drill down by
+              Browse verified shops by state, then drill down by
               city to compare services and contact details.
             </p>
 
@@ -174,7 +174,7 @@ export default async function Home() {
                 >
                   <p className="text-lg font-semibold">{state.stateName}</p>
                   <p className="mt-1 text-sm text-gold-soft">
-                    {state.stateName} — {state.totalFacilities.toLocaleString()} salons
+                    {state.stateName} — {state.totalFacilities.toLocaleString()} shops
                   </p>
                 </Link>
               ))}
@@ -182,7 +182,7 @@ export default async function Home() {
 
             <p className="mt-4 text-sm font-medium text-foreground">
               Each state has its own dedicated directory — specific
-              salons, specific cities, built for that state only.
+              shops, specific cities, built for that state only.
             </p>
           </div>
         </div>
@@ -191,10 +191,10 @@ export default async function Home() {
       {canadaDirectory.length > 0 && (
         <section className="mx-auto max-w-6xl px-4 pt-8 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-navy">
-            Canadian Nail Salon Directories
+            Canadian Tattoo Shop Directories
           </h2>
           <p className="mt-2 text-sm text-foreground/70">
-            Browse verified salons by Canadian province. Same
+            Browse verified shops by Canadian province. Same
             directory experience — province by province, then by city.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -206,7 +206,7 @@ export default async function Home() {
               >
                 <p className="text-lg font-semibold">{item.provinceName}</p>
                 <p className="mt-1 text-sm text-gold-soft">
-                  {item.provinceName} — {item.totalFacilities.toLocaleString()} salons
+                  {item.provinceName} — {item.totalFacilities.toLocaleString()} shops
                 </p>
               </Link>
             ))}
@@ -223,11 +223,11 @@ export default async function Home() {
         return (
           <section className="mx-auto max-w-6xl rounded-2xl border-2 border-teal/20 bg-surface px-4 py-10 sm:px-6 lg:px-8">
             <h2 className="text-xl font-semibold text-foreground">
-              Featured salons
+              Featured shops
             </h2>
             <p className="mt-1 text-sm text-foreground/70">
-              Selected salons across our directories — verified listings for
-              clients comparing nail salons, nail technicians, and manicurists.
+              Selected shops across our directories — verified listings for
+              clients comparing tattoo shops, tattoo artists, and body art studios.
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {allFeatured.map((facility) => (
@@ -239,12 +239,12 @@ export default async function Home() {
       })()}
 
       <p className="mx-auto max-w-2xl rounded-lg border-2 border-teal/40 bg-surface px-4 py-3 text-center text-sm text-foreground/85">
-        Salon owners: Get featured at the top of your city listing.{" "}
+        Shop owners: Get featured at the top of your city listing.{" "}
         <Link
           href="/advertise"
           className="font-medium text-teal underline underline-offset-2 hover:text-teal-soft"
         >
-          Learn about featured salon placement
+          Learn about featured shop placement
         </Link>{" "}
         or contact{" "}
         <a
@@ -282,7 +282,7 @@ export default async function Home() {
                 Browse by city
               </h3>
               <p className="mt-2 text-sm text-foreground/70">
-                Compare local options by city with ratings, salon services,
+                Compare local options by city with ratings, tattoo and body art services,
                 and contact details.
               </p>
             </div>
@@ -291,11 +291,11 @@ export default async function Home() {
                 3️⃣
               </p>
               <h3 className="mt-3 text-lg font-semibold text-foreground">
-                Contact salons directly
+                Contact shops directly
               </h3>
               <p className="mt-2 text-sm text-foreground/70">
                 Use website and maps links to verify details and contact
-                salons.
+                shops.
               </p>
             </div>
           </div>
@@ -331,7 +331,7 @@ export default async function Home() {
               </h3>
               <p className="mt-2 text-sm text-foreground/70">
                 No signup required, no spam, just helpful information for
-                anyone booking a manicure, pedicure, or nail service.
+                anyone planning a tattoo, piercing, or body art appointment.
               </p>
             </article>
           </div>
@@ -342,16 +342,16 @@ export default async function Home() {
         <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-gold/50 bg-surface p-6 text-foreground ring-1 ring-gold/30">
             <h2 className="text-2xl font-semibold text-foreground">
-              Are You a Salon Owner?
+              Are You a Shop Owner?
             </h2>
             <p className="mt-3 max-w-3xl text-sm text-foreground/90">
-              Get your salon seen by clients actively searching for nail salons,
-              nail technicians, and manicure and pedicure services in your city. Featured listings available.
+              Get your shop seen by clients actively searching for tattoo shops,
+              tattoo artists, tattoos, and body art in your city. Featured listings available.
             </p>
             <div className="mt-5">
               <Link
                 href="/advertise"
-                className="inline-flex items-center justify-center rounded-full border border-brand-ink/15 bg-navy px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-white shadow-sm transition hover:bg-navy-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-champagne focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="inline-flex items-center justify-center rounded-full border border-navy/20 bg-navy px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-white shadow-sm transition hover:bg-navy-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-champagne focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 Learn About Featured Listings
               </Link>

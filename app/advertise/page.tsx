@@ -2,34 +2,34 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Advertise | Get Your Salon in Front of Clients",
+  title: "Advertise | Get Your Shop in Front of Clients",
   description:
-    "Featured and premium listings on NailSalonDirectories.com. Reach clients actively searching for nail salons, nail technicians, manicures, and pedicures across the United States.",
+    "Featured and premium listings on TattooShopDirectories.com. Reach clients actively searching for tattoo shops, tattoo artists, tattoos, and body art across the United States.",
   alternates: {
     canonical: "/advertise",
     languages: {
-      "en-us": "https://nailsalondirectories.com/advertise",
+      "en-us": "https://tattooshopdirectories.com/advertise",
     },
   },
   openGraph: {
-    title: "Advertise | Get Your Salon in Front of Clients",
+    title: "Advertise | Get Your Shop in Front of Clients",
     description:
-      "A featured listing puts your salon at the top of your city directory section and in front of high-intent visitors at the moment they are choosing a nail salon or nail technician.",
+      "A featured listing puts your shop at the top of your city directory section and in front of high-intent visitors at the moment they are choosing a tattoo shop or tattoo artist.",
     url: "/advertise",
-    siteName: "NailSalonDirectories.com",
+    siteName: "TattooShopDirectories.com",
     type: "website",
     images: [
       {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "NailSalonDirectories.com advertise page preview",
+        alt: "TattooShopDirectories.com advertise preview",
       },
     ],
   },
 };
 
-const siteUrl = "https://nailsalondirectories.com";
+const siteUrl = "https://tattooshopdirectories.com";
 const STRIPE_LINK_49 = "https://buy.stripe.com/cNi4gzfiG9LNfoycTLfAc0A";
 const STRIPE_LINK_99 = "https://buy.stripe.com/5kQ7sL2vU7DF0tE06ZfAc0B";
 
@@ -41,7 +41,7 @@ export default function AdvertisePage() {
       {
         "@type": "ListItem",
         position: 1,
-        name: "NailSalonDirectories.com",
+        name: "TattooShopDirectories.com",
         item: `${siteUrl}/`,
       },
       {
@@ -62,16 +62,16 @@ export default function AdvertisePage() {
 
       <header className="space-y-3">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">
-          For Salon Owners
+          For Shop Owners
         </p>
         <h1 className="text-3xl font-semibold text-navy sm:text-4xl">
-          Get Your Salon in Front of Clients Who Are Ready to Book
+          Get Your Shop in Front of Clients Who Are Ready to Book
         </h1>
         <p className="max-w-3xl text-sm text-slate-600">
-          NailSalonDirectories.com is visited by clients actively searching for
-          nail salons and manicure and pedicure services across the United States. A featured listing puts
-          your salon at the top of your city directory section and in front of
-          high-intent visitors at the moment they are choosing a nail salon or nail technician.
+          TattooShopDirectories.com is visited by clients actively searching for
+          tattoo shops, tattoo artists, tattoos, and body art across the United States. A featured listing puts
+          your shop at the top of your city directory section and in front of
+          high-intent visitors at the moment they are choosing a tattoo shop or tattoo artist.
         </p>
       </header>
 
@@ -101,8 +101,8 @@ export default function AdvertisePage() {
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-600">
             <li>Everything in Featured</li>
-            <li>Included in the Featured Salons section on the homepage</li>
-            <li>Your salon logo or photo displayed</li>
+            <li>Included in the Featured Shops section on the homepage</li>
+            <li>Your shop logo or photo displayed</li>
             <li>Custom tagline (up to 60 words)</li>
             <li>Cancel anytime</li>
           </ul>
