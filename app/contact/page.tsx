@@ -3,33 +3,33 @@ import Link from "next/link";
 import { ContactForm } from "./ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Tattoo Shop Directories",
+  title: "Contact Us | Plumber Directories",
   description:
-    "Get in touch with TattooShopDirectories.com. Send a message or email hello@directoriesnetwork.com for questions about our directory or featured listings.",
+    "Get in touch with PlumbersDirectories.com. Send a message or email hello@directoriesnetwork.com for questions about our directory or featured listings.",
   alternates: {
     canonical: "/contact",
     languages: {
-      "en-us": "https://tattooshopdirectories.com/contact",
+      "en-us": "https://plumbersdirectories.com/contact",
     },
   },
   openGraph: {
-    title: "Contact Us | Tattoo Shop Directories",
+    title: "Contact Us | Plumber Directories",
     description:
-      "Contact TattooShopDirectories.com for questions about our directory or featured listings.",
+      "Contact PlumbersDirectories.com for questions about our directory or featured listings.",
     url: "/contact",
-    siteName: "TattooShopDirectories.com",
+    siteName: "PlumbersDirectories.com",
     type: "website",
   },
 };
 
-const siteUrl = "https://tattooshopdirectories.com";
+const siteUrl = "https://plumbersdirectories.com";
 
 export default function ContactPage() {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "TattooShopDirectories.com", item: `${siteUrl}/` },
+      { "@type": "ListItem", position: 1, name: "PlumbersDirectories.com", item: `${siteUrl}/` },
       { "@type": "ListItem", position: 2, name: "Contact", item: `${siteUrl}/contact` },
     ],
   };

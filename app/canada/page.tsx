@@ -9,8 +9,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const stats = getCanadaNationwideStats();
   const total = stats.totalFacilities.toLocaleString();
   const provinces = stats.provinceCount.toLocaleString();
-  const title = `Tattoo Shops in Canada | ${total} verified listings | Tattoo Shop Directories`;
-  const description = `Browse ${total} verified tattoo shops across ${provinces} provinces and territories—maps, contact info, and Google ratings. Every listing rated 3 stars or higher on Google Maps.`;
+  const title = `Plumbers in Canada | ${total} verified listings | Plumber Directory`;
+  const description = `Browse ${total} verified plumbers across ${provinces} provinces and territories—maps, contact info, and Google ratings. Every listing rated 3 stars or higher on Google Maps.`;
 
   return {
     title,
@@ -22,14 +22,14 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       url: "/canada",
-      siteName: "TattooShopDirectories.com",
+      siteName: "PlumbersDirectories.com",
       type: "website",
       images: [
         {
           url: "/og-image.svg",
           width: 1200,
           height: 630,
-          alt: "Canada tattoo shop directory preview",
+          alt: "Canada plumber directory preview",
         },
       ],
     },
@@ -46,14 +46,14 @@ export default async function CanadaLandingPage() {
         <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
           <div className="space-y-6 rounded-2xl bg-brand-gradient px-6 py-8 text-brand-ink shadow-sm sm:px-8 sm:py-10">
             <p className="inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] backdrop-blur-sm">
-              Canadian Tattoo Shop Directories
+              Canadian Plumber Directories
             </p>
             <h1 className="text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
-              Tattoo Shops in Canada — Province by Province
+              Plumbers in Canada — Province by Province
             </h1>
             <p className="max-w-2xl text-balance text-sm sm:text-base text-white/85">
-              Verified tattoo shops across provinces and territories.
-              Every listing rated 3★ or higher on Google Maps.
+              Verified plumbers and plumbing contractors across provinces and
+              territories. Every listing rated 3★ or higher on Google Maps.
             </p>
           </div>
 
@@ -72,7 +72,7 @@ export default async function CanadaLandingPage() {
               </div>
               <div className="rounded-xl border border-teal/25 bg-surface-muted p-4 text-center shadow-sm">
                 <p className="text-xs font-semibold uppercase tracking-wide text-teal">
-                  Verified shops
+                  Verified listings
                 </p>
                 <p className="mt-2 text-2xl font-semibold text-foreground">
                   {caNationwide.totalFacilities.toLocaleString()}
@@ -104,8 +104,8 @@ export default async function CanadaLandingPage() {
               Choose a province
             </h2>
             <p className="mt-2 text-sm text-foreground/90">
-              Browse verified shops by province, then drill down
-              by city to compare services and contact details.
+              Browse verified listings by province, then drill down by city to
+              compare services and contact details.
             </p>
             <p className="mt-2 text-sm font-medium text-foreground">
               {directory.map((item) => item.provinceName).join(" • ")}
@@ -119,14 +119,14 @@ export default async function CanadaLandingPage() {
                 >
                   <p className="text-lg font-semibold">{item.provinceName}</p>
                   <p className="mt-1 text-sm text-gold-soft">
-                    {item.provinceName} — {item.totalFacilities.toLocaleString()} shops
+                    {item.provinceName} — {item.totalFacilities.toLocaleString()} listings
                   </p>
                 </Link>
               ))}
             </div>
             <p className="mt-4 text-sm font-medium text-foreground">
-              Each province has its own dedicated directory — specific
-              shops, specific cities, built for that province only.
+              Each province has its own dedicated directory — specific listings
+              and cities, built for that province only.
             </p>
           </div>
         </div>

@@ -4,15 +4,14 @@ import { FacilityCard } from "@/components/FacilityCard";
 import {
   getDirectoryIndex,
   getHreflangForRegionSlug,
-  getStateResourcesUrl,
   getStateSummary,
 } from "@/lib/stateFacilities";
 import {
-  DEFAULT_TATTOO_CARE_TYPES_SENTENCE,
-  tattooCategorySchemaThings,
+  DEFAULT_PLUMBER_CARE_TYPES_SENTENCE,
+  plumberCategorySchemaThings,
 } from "@/lib/careTypesProse";
 
-const siteUrl = "https://tattooshopdirectories.com";
+const siteUrl = "https://plumbersdirectories.com";
 
 type StatePageProps = {
   params: Promise<{ stateSlug: string }>;
@@ -29,9 +28,9 @@ export async function generateMetadata({
 
   const { stateName, totalFacilities, cities } = await getStateSummary(safeSlug);
 
-  const title = `Tattoo Shops in ${stateName} | ${totalFacilities.toLocaleString()} Verified Listings | TattooShopDirectories.com`;
+  const title = `Plumbers in ${stateName} | ${totalFacilities.toLocaleString()} Verified Listings | PlumbersDirectories.com`;
 
-  const descriptor = `Browse ${totalFacilities.toLocaleString()} verified tattoo shops across ${cities.length.toLocaleString()} ${stateName} cities. Find tattoo artists and body art studios — all rated 3 stars or higher on Google Maps.`;
+  const descriptor = `Browse ${totalFacilities.toLocaleString()} verified plumbers and plumbing contractors across ${cities.length.toLocaleString()} ${stateName} cities. Find drain, septic, and water heater help — all rated 3 stars or higher on Google Maps.`;
 
   return {
     title,
@@ -46,14 +45,14 @@ export async function generateMetadata({
       title,
       description: descriptor,
       url: canonicalPath,
-      siteName: "TattooShopDirectories.com",
+      siteName: "PlumbersDirectories.com",
       type: "website",
       images: [
         {
           url: "/og-image.svg",
           width: 1200,
           height: 630,
-          alt: `${stateName} tattoo shop directory preview`,
+          alt: `${stateName} plumber directory preview`,
         },
       ],
     },
@@ -76,9 +75,8 @@ export default async function StatePage({ params }: StatePageProps) {
     averageRating,
     careTypes,
   } = await getStateSummary(stateSlug ?? "");
-  const resourcesUrl = getStateResourcesUrl(resolvedStateSlug);
-  const tattooFocusText =
-    "tattoo shops, tattoo and piercing shops, tattoo artists, tattoos, and body art";
+  const plumbingFocusText =
+    "licensed plumbers, plumbing contractors, drain cleaning, septic services, and water heater repair";
   const majorCities = [...cities]
     .sort((a, b) => b.facilityCount - a.facilityCount)
     .slice(0, 6)
@@ -90,7 +88,7 @@ export default async function StatePage({ params }: StatePageProps) {
   const careTypesSentence =
     topCareTypes.length > 0
       ? topCareTypes.join(", ")
-      : DEFAULT_TATTOO_CARE_TYPES_SENTENCE;
+      : DEFAULT_PLUMBER_CARE_TYPES_SENTENCE;
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -99,7 +97,7 @@ export default async function StatePage({ params }: StatePageProps) {
       {
         "@type": "ListItem",
         position: 1,
-        name: "TattooShopDirectories.com",
+        name: "PlumbersDirectories.com",
         item: `${siteUrl}/`,
       },
       {
@@ -117,7 +115,7 @@ export default async function StatePage({ params }: StatePageProps) {
     mainEntity: [
       {
         "@type": "Question",
-        name: `How many tattoo shops are in ${stateName}?`,
+        name: `How many plumbers are listed in ${stateName}?`,
         acceptedAnswer: {
           "@type": "Answer",
           text: `Our directory lists ${totalFacilities.toLocaleString()} verified facilities across ${cities.length.toLocaleString()} cities.`,
@@ -125,7 +123,7 @@ export default async function StatePage({ params }: StatePageProps) {
       },
       {
         "@type": "Question",
-        name: `What types of tattoo and body art services are available in ${stateName}?`,
+        name: `What types of plumbing services are common in ${stateName}?`,
         acceptedAnswer: {
           "@type": "Answer",
           text: `${careTypesSentence}.`,
@@ -133,7 +131,7 @@ export default async function StatePage({ params }: StatePageProps) {
       },
       {
         "@type": "Question",
-        name: "How are shops selected for this directory?",
+        name: "How are businesses selected for this directory?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "All listings are sourced from Google Maps, verified, and must have a minimum 3-star rating.",
@@ -145,19 +143,19 @@ export default async function StatePage({ params }: StatePageProps) {
   const webpageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: `Tattoo Shops in ${stateName}`,
+    name: `Plumbers in ${stateName}`,
     url: `${siteUrl}/${resolvedStateSlug}`,
     isPartOf: {
       "@type": "WebSite",
-      name: "TattooShopDirectories.com",
+      name: "PlumbersDirectories.com",
       url: `${siteUrl}/`,
     },
     about: [
       {
         "@type": "Thing",
-        name: `${stateName} tattoo shops`,
+        name: `${stateName} plumbers`,
       },
-      ...tattooCategorySchemaThings(),
+      ...plumberCategorySchemaThings(),
     ],
     speakable: {
       "@type": "SpeakableSpecification",
@@ -192,34 +190,25 @@ export default async function StatePage({ params }: StatePageProps) {
         className="mb-4 flex items-center justify-center gap-2 rounded-full bg-teal px-5 py-3 text-center text-sm font-semibold text-white shadow-md transition hover:bg-teal-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2"
         aria-label="View featured listing pricing and benefits"
       >
-        Get your shop featured — view pricing &amp; benefits →
+        Get your business featured — view pricing &amp; benefits →
       </Link>
       <section className="rounded-2xl bg-surface-muted px-5 py-6 text-foreground shadow-lg shadow-navy/10 ring-1 ring-gold/40 sm:px-8 sm:py-8">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-soft">
           State overview
         </p>
         <h1 className="mt-2 text-3xl font-semibold sm:text-4xl">
-          Tattoo Shops in {stateName}
+          Plumbers in {stateName}
         </h1>
         <p className="mt-3 max-w-2xl text-sm text-foreground/80">
-          Explore {tattooFocusText} across {stateName}, including major city
-          areas such as {majorCitiesText}. Use this page to find shops by city,
-          then review{" "}
-          <a
-            href={resourcesUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-2 hover:text-gold-soft"
-          >
-            Association of Professional Piercers industry resources
-          </a>{" "}
-          for industry trends, licensing context, and how to choose a tattoo shop or tattoo artist.
+          Explore {plumbingFocusText} across {stateName}, including major city
+          areas such as {majorCitiesText}. Use this page to find listings by city,
+          then compare contact details, ratings, and services before you hire.
         </p>
 
         <div className="mt-5 grid gap-4 text-sm sm:grid-cols-3">
           <div className="rounded-xl bg-surface p-4 ring-1 ring-navy/10">
             <p className="text-xs font-semibold uppercase tracking-wide text-gold-soft">
-              Shops listed
+              Listings
             </p>
             <p className="mt-1 text-2xl font-semibold">
               {totalFacilities.toLocaleString()}
@@ -258,7 +247,7 @@ export default async function StatePage({ params }: StatePageProps) {
               Top Picks in {stateName}
             </h2>
             <p className="text-sm text-slate-600">
-              Featured shops in {stateName} — verified listings with priority placement.
+              Featured listings in {stateName} — verified with priority placement.
             </p>
             <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {featuredFacilities.map((facility) => (
@@ -273,11 +262,12 @@ export default async function StatePage({ params }: StatePageProps) {
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-navy border-b-2 border-teal/50 pb-1 inline-block">
-              Shops by City in {stateName}
+              Listings by city in {stateName}
             </h2>
             <p className="mt-1 max-w-2xl text-sm text-slate-600">
-              Choose a city to browse tattoo shops, tattoo artists, and body art studios in{" "}
-              {stateName}, including custom tattoos, piercings, and flash work.
+              Choose a city to browse plumbers and plumbing contractors in{" "}
+              {stateName}, including drain cleaning, septic service, repipes, and
+              water heater work.
             </p>
           </div>
           <div className="text-xs text-slate-500">
@@ -289,7 +279,7 @@ export default async function StatePage({ params }: StatePageProps) {
 
         {cities.length === 0 ? (
           <p className="text-sm text-slate-600">
-            We don&apos;t have shops listed for {stateName} yet. As new data
+            We don&apos;t have listings for {stateName} yet. As new data
             becomes available, cities and listings will appear here.
           </p>
         ) : (
@@ -304,7 +294,7 @@ export default async function StatePage({ params }: StatePageProps) {
                   <span className="font-medium">{city.cityName}</span>
                   <span className="text-xs text-slate-600 group-hover:text-navy/85">
                     {city.facilityCount.toLocaleString()}{" "}
-                    {city.facilityCount === 1 ? "shop" : "shops"}
+                    {city.facilityCount === 1 ? "listing" : "listings"}
                   </span>
                 </div>
                 {city.averageRating ? (

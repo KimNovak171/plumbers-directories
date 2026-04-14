@@ -5,14 +5,14 @@ import { getAllPosts } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Guides and articles on choosing tattoo shops, booking appointments, aftercare, styles, and more from TattooShopDirectories.com.",
+    "Guides and articles on hiring plumbers, emergency repairs, drain and septic care, water heaters, and home plumbing from PlumbersDirectories.com.",
   alternates: {
     canonical: "/blog",
   },
   openGraph: {
-    title: "Blog | TattooShopDirectories.com",
+    title: "Blog | PlumbersDirectories.com",
     url: "/blog",
-    siteName: "TattooShopDirectories.com",
+    siteName: "PlumbersDirectories.com",
     type: "website",
   },
 };
@@ -42,8 +42,8 @@ export default function BlogIndexPage() {
           Articles &amp; guides
         </h1>
         <p className="max-w-3xl text-sm text-slate-600">
-          Practical tips on finding shops and artists, booking, aftercare, and
-          tattoo culture—written for clients navigating their next piece.
+          Practical tips on finding licensed plumbers, comparing estimates,
+          maintenance, and drainage—written for homeowners and property managers.
         </p>
       </header>
 

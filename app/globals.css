@@ -10,7 +10,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* Navy = brand dark; teal/gold tokens = flash red accent (legacy names kept for classnames) */
+  /* Brand palette: navy background, accent mapped to Tailwind teal/gold class names */
   --color-navy: #0d1b2a;
   --color-navy-soft: #1b2838;
   --color-teal: #c1121f;

@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Tattoo Shop Directories",
+  title: "Privacy Policy | Plumber Directories",
   description:
-    "Privacy policy for TattooShopDirectories.com. How we collect, use, and protect your information when you use our tattoo shop directory.",
+    "Privacy policy for PlumbersDirectories.com. How we collect, use, and protect your information when you use our plumber directory.",
   alternates: {
     canonical: "/privacy",
     languages: {
-      "en-us": "https://tattooshopdirectories.com/privacy",
+      "en-us": "https://plumbersdirectories.com/privacy",
     },
   },
   openGraph: {
-    title: "Privacy Policy | Tattoo Shop Directories",
+    title: "Privacy Policy | Plumber Directories",
     url: "/privacy",
-    siteName: "TattooShopDirectories.com",
+    siteName: "PlumbersDirectories.com",
     type: "website",
   },
 };
@@ -38,12 +38,12 @@ export default function PrivacyPage() {
         <section className="space-y-4 text-sm text-slate-700">
           <h2 className="text-lg font-semibold text-navy">1. Introduction</h2>
           <p>
-            TattooShopDirectories.com (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) operates a directory website that helps clients find and compare tattoo shops across the United States and Canada. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.
+            PlumbersDirectories.com (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) operates a directory website that helps clients find and compare plumbers and plumbing contractors across the United States and Canada. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.
           </p>
 
           <h2 className="text-lg font-semibold text-navy">2. Information We Collect</h2>
           <p>
-            We may collect information that you provide directly, such as when you contact us, submit a form, or sign up for a featured listing. This may include your name, email address, phone number, shop or business details, and any message content. We also automatically collect certain technical information when you visit our site, such as your IP address, browser type, device information, and pages visited, which may be collected through cookies or similar technologies.
+            We may collect information that you provide directly, such as when you contact us, submit a form, or sign up for a featured listing. This may include your name, email address, phone number, business details, and any message content. We also automatically collect certain technical information when you visit our site, such as your IP address, browser type, device information, and pages visited, which may be collected through cookies or similar technologies.
           </p>
 
           <h2 className="text-lg font-semibold text-navy">3. How We Use Your Information</h2>
@@ -53,7 +53,7 @@ export default function PrivacyPage() {
 
           <h2 className="text-lg font-semibold text-navy">4. Directory Listings and Public Information</h2>
           <p>
-            Our directory displays information about tattoo shops that we obtain from public sources (such as Google Maps) or that is provided by business owners. Listing details (e.g., name, address, phone, website) are shown to help users compare options. If you are a shop owner and wish to update or remove your listing, contact us at hello@directoriesnetwork.com.
+            Our directory displays information about plumbing businesses that we obtain from public sources (such as Google Maps) or that is provided by business owners. Listing details (e.g., name, address, phone, website) are shown to help users compare options. If you are a business owner and wish to update or remove your listing, contact us at hello@directoriesnetwork.com.
           </p>
 
           <h2 className="text-lg font-semibold text-navy">5. Cookies and Tracking</h2>
@@ -63,7 +63,7 @@ export default function PrivacyPage() {
 
           <h2 className="text-lg font-semibold text-navy">6. Third-Party Links and Services</h2>
           <p>
-            Our site may contain links to third-party websites (e.g., shop websites, Google Maps, payment processors). We are not responsible for the privacy practices of those sites. We encourage you to read their privacy policies.
+            Our site may contain links to third-party websites (e.g., business websites, Google Maps, payment processors). We are not responsible for the privacy practices of those sites. We encourage you to read their privacy policies.
           </p>
 
           <h2 className="text-lg font-semibold text-navy">7. Data Security</h2>

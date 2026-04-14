@@ -12,11 +12,11 @@ export function generateMetadata({
   const regionCode = params.region.toUpperCase();
 
   return {
-    title: `Tattoo shops in ${regionCode}`,
-    description: `Explore tattoo shop options in ${regionCode} with TattooShopDirectories.com.`,
+    title: `Plumbers in ${regionCode}`,
+    description: `Explore plumber listings in ${regionCode} with PlumbersDirectories.com.`,
     openGraph: {
-      title: `Tattoo shops in ${regionCode} | TattooShopDirectories.com`,
-      description: `Browse tattoo shops and tattoo artists in ${regionCode}.`,
+      title: `Plumbers in ${regionCode} | PlumbersDirectories.com`,
+      description: `Browse plumbers and plumbing contractors in ${regionCode}.`,
       url: `/locations/${params.region}`,
       type: "website",
     },
@@ -30,15 +30,15 @@ export default function RegionPage({ params }: RegionPageProps) {
     <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
       <div className="space-y-4">
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-teal">
-          Shops by region
+          Listings by region
         </p>
         <h1 className="text-3xl font-semibold text-navy">
-          Tattoo shops in {regionCode}
+          Plumbers in {regionCode}
         </h1>
         <p className="max-w-2xl text-sm text-slate-600">
           This is a placeholder view for{" "}
           <span className="font-semibold">{regionCode}</span>. Here you&apos;ll
-          be able to browse tattoo shops and tattoo artists in this state or
+          be able to browse plumbers and plumbing contractors in this state or
           province.
         </p>
         <div className="mt-6 rounded-xl border border-surface-muted bg-surface px-4 py-6 text-sm text-slate-500">

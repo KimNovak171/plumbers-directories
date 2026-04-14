@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About This Directory | Tattoo Shop Directories",
+  title: "About This Directory | Plumber Directories",
   description:
-    "Learn about TattooShopDirectories.com — a trusted directory helping clients compare tattoo shops, tattoo artists, tattoos, and body art across the US and Canada.",
+    "Learn about PlumbersDirectories.com — a trusted directory helping clients compare licensed plumbers, plumbing contractors, drain services, and septic providers across the US and Canada.",
   alternates: {
     canonical: "/about",
     languages: {
-      "en-us": "https://tattooshopdirectories.com/about",
+      "en-us": "https://plumbersdirectories.com/about",
     },
   },
   openGraph: {
-    title: "About This Directory | Tattoo Shop Directories",
+    title: "About This Directory | Plumber Directories",
     url: "/about",
-    siteName: "TattooShopDirectories.com",
+    siteName: "PlumbersDirectories.com",
     type: "website",
   },
 };
@@ -30,19 +30,28 @@ export default function AboutPage() {
           About This Directory
         </h1>
         <p className="max-w-3xl text-sm text-slate-600">
-          TattooShopDirectories.com is a professional, easy-to-use directory that helps clients find and compare tattoo shops across the United States and Canada.
+          PlumbersDirectories.com is a professional, easy-to-use directory that
+          helps clients find and compare plumbers and plumbing contractors across
+          the United States and Canada.
         </p>
       </header>
 
       <div className="mt-10 max-w-3xl space-y-6 text-sm text-slate-700">
         <p>
-          We list verified shops — so you can explore options by state and city, compare contact details and ratings, and make informed decisions. Our listings are sourced from public information and verified where possible; we encourage you to confirm licenses and health department rules for tattooing and piercing where applicable, and to visit shops in person when possible.
+          We list verified businesses — so you can explore options by state and
+          city, compare contact details and ratings, and make informed decisions.
+          Our listings are sourced from public information and verified where
+          possible; we encourage you to confirm licenses, insurance, and permits
+          with your local authority, and to contact businesses directly before
+          work begins.
         </p>
         <p>
-          This site is for informational purposes only. We do not endorse any specific shop. Always verify licensing, inspections, and accreditation with the appropriate regulatory body in your area.
+          This site is for informational purposes only. We do not endorse any
+          specific business. Always verify licensing, bonding, and insurance with
+          the appropriate regulatory body in your area.
         </p>
         <p>
-          Shop owners can learn about featured and premium listings on our{" "}
+          Business owners can learn about featured and premium listings on our{" "}
           <Link href="/advertise" className="font-medium text-teal hover:text-teal-soft">
             Advertise
           </Link>{" "}

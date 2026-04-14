@@ -1,26 +1,32 @@
 /**
  * Turn raw Google-style category labels into short, natural phrases for prose
- * (e.g. city page intros). Omits entries that do not look tattoo- or body-art-related.
+ * (e.g. city page intros). Omits entries that do not look plumbing-related.
  */
 
 const EXACT_PHRASE: Record<string, string> = {
-  "tattoo shop": "tattoo shops",
-  "tattoo parlor": "tattoo parlors",
-  "tattoo studio": "tattoo studios",
-  "tattoo artist": "tattoo artists",
-  tatoueur: "tatoueurs",
-  "tattoo and piercing shop": "tattoo and piercing shops",
-  "tattoo & piercing shop": "tattoo & piercing shops",
-  "estudio de tatuajes": "estudios de tatuajes",
-  "salon de tatouage et piercing": "salons de tatouage et piercing",
+  plumber: "plumbers",
+  "plumbing service": "plumbing services",
+  "plumbing contractor": "plumbing contractors",
+  "plumbing company": "plumbing companies",
+  "plumbing repair": "plumbing repairs",
+  "drain cleaning service": "drain cleaning services",
+  "drain cleaning": "drain cleaning services",
+  "septic system service": "septic system services",
+  "septic service": "septic services",
+  "septic tank service": "septic tank services",
+  "water heater service": "water heater services",
+  "water heater repair": "water heater repairs",
+  "emergency plumber": "emergency plumbers",
+  "licensed plumber": "licensed plumbers",
+  "rooter service": "rooter services",
 };
 
-const TATTOO_LIKE =
-  /tattoo|tatou|tatuaj|piercing|body\s*art|ink|needle|flash|tatouage/i;
+const PLUMBING_LIKE =
+  /plumb|drain|septic|sewer|pipe|clog|water\s*heater|leak|hydro|rooter|slab|fixture|boiler|sump|backflow|repipe|gas\s*line/i;
 
-/** Labels that match common noise but are not tattoo or body art businesses. */
-const NON_TATTOO =
-  /auto\s+repair|collision|transmission|student\s+dormitory|orthodox\s+church|storage\s+facility|insurance\s+agency|urolog|nail\s+salon|manicure|pedicure/i;
+/** Labels that match common noise but are not plumbing businesses. */
+const NON_PLUMBING =
+  /tatou|tatuaj|auto\s+repair|collision|transmission|student\s+dormitory|orthodox\s+church|storage\s+facility|insurance\s+agency|urolog|beauty|barbershop|spa|\bsalon\b|\bnail\b|manicure|pedicure/i;
 
 function normalizeKey(raw: string): string {
   return raw.trim().toLowerCase().replace(/\s+/g, " ");
@@ -39,7 +45,7 @@ function humanizeFallback(raw: string): string {
   if (s.endsWith(" center")) {
     return s.replace(/ center$/, " centers");
   }
-  if (s.endsWith("ist") && !/tattooist$|tatoueur$/.test(s)) {
+  if (s.endsWith("ist") && !/plumber$/.test(s)) {
     return `${s}s`;
   }
   if (!s.endsWith("s")) {
@@ -51,9 +57,9 @@ function humanizeFallback(raw: string): string {
 function phraseForLabel(raw: string): string | null {
   const key = normalizeKey(raw);
   if (!key) return null;
-  if (NON_TATTOO.test(key)) return null;
+  if (NON_PLUMBING.test(key)) return null;
   if (EXACT_PHRASE[key]) return EXACT_PHRASE[key];
-  if (!TATTOO_LIKE.test(raw)) return null;
+  if (!PLUMBING_LIKE.test(raw)) return null;
   return humanizeFallback(raw);
 }
 
@@ -82,26 +88,26 @@ export function formatCareTypesClause(
     if (phrases.length >= maxItems) break;
   }
   if (phrases.length === 0) {
-    return "including tattoo shops, tattoo and piercing shops, tattoo artists, body art studios, and professional piercers";
+    return "including licensed plumbers, plumbing contractors, drain cleaning, septic system services, and water heater repair";
   }
   return `including ${oxfordJoin(phrases)}`;
 }
 
-/** Schema.org `Thing` entries for primary tattoo and body art categories on this directory. */
-export function tattooCategorySchemaThings(): {
+/** Schema.org `Thing` entries for primary plumbing categories on this directory. */
+export function plumberCategorySchemaThings(): {
   "@type": "Thing";
   name: string;
 }[] {
   return [
-    { "@type": "Thing", name: "Tattoo Shop" },
-    { "@type": "Thing", name: "Tattoo and Piercing Shop" },
-    { "@type": "Thing", name: "Tattoo Artist" },
-    { "@type": "Thing", name: "Tatoueur" },
-    { "@type": "Thing", name: "Estudio de Tatuajes" },
-    { "@type": "Thing", name: "Salon de Tatouage et Piercing" },
+    { "@type": "Thing", name: "Licensed Plumber" },
+    { "@type": "Thing", name: "Plumbing Contractor" },
+    { "@type": "Thing", name: "Plumbing Services" },
+    { "@type": "Thing", name: "Drain Cleaning" },
+    { "@type": "Thing", name: "Septic System Services" },
+    { "@type": "Thing", name: "Drainage Services" },
   ];
 }
 
 /** Default sentence when no care-type stats exist (FAQ answers, etc.). */
-export const DEFAULT_TATTOO_CARE_TYPES_SENTENCE =
-  "Tattoo Shop, Tattoo and Piercing Shop, Tattoo Artist, Tatoueur, Estudio de Tatuajes, Salon de Tatouage et Piercing";
+export const DEFAULT_PLUMBER_CARE_TYPES_SENTENCE =
+  "Licensed Plumber, Plumbing Contractor, Plumbing Services, Drain Cleaning, Septic System Services, Drainage Services";

@@ -547,11 +547,6 @@ export function getGlobalStats(): GlobalStats {
   };
 }
 
-export function getStateResourcesUrl(stateSlug: string): string {
-  void stateSlug;
-  return "https://www.safepiercing.org";
-}
-
 export function getHreflangForRegionSlug(
   regionSlug: string,
 ): "en-us" | "en-ca" {

@@ -16,29 +16,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tattooshopdirectories.com"),
+  metadataBase: new URL("https://plumbersdirectories.com"),
   title: {
-    default: "TattooShopDirectories.com | Tattoo Shop Directory",
-    template: "%s | TattooShopDirectories.com",
+    default: "PlumbersDirectories.com | Plumber Directory",
+    template: "%s | PlumbersDirectories.com",
   },
   description:
-    "TattooShopDirectories.com is a professional, easy-to-use tattoo shop directory helping clients find local tattoo shops, tattoo artists, tattoos, and body art across the United States and Canada.",
+    "PlumbersDirectories.com is a professional, easy-to-use plumber directory helping homeowners and businesses find licensed plumbers, plumbing services, drain cleaning, septic work, and water heater help across the United States and Canada.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "TattooShopDirectories.com | Tattoo Shop Directory",
+    title: "PlumbersDirectories.com | Plumber Directory",
     description:
-      "Trusted resource to explore and compare tattoo shops, tattoo artists, tattoos, and body art across North America.",
+      "Trusted resource to explore and compare local plumbers, plumbing contractors, and drainage services across North America.",
     url: "/",
-    siteName: "TattooShopDirectories.com",
+    siteName: "PlumbersDirectories.com",
     type: "website",
     images: [
       {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "TattooShopDirectories.com logo preview",
+        alt: "PlumbersDirectories.com logo preview",
       },
     ],
   },
@@ -88,9 +88,9 @@ export default async function RootLayout({
                 <Link
                   href="/"
                   className="text-[11px] font-bold tracking-[0.28em] sm:text-xs text-brand-ink transition-colors hover:opacity-80"
-                  aria-label="TattooShopDirectories.com – go to homepage"
+                  aria-label="PlumbersDirectories.com – go to homepage"
                 >
-                  TattooShopDirectories.com
+                  PlumbersDirectories.com
                 </Link>
                 <nav className="flex items-center gap-4" aria-label="Main navigation">
                   <Link
@@ -126,7 +126,7 @@ export default async function RootLayout({
                 </nav>
               </div>
               <p className="ml-4 hidden max-w-xs text-right text-xs text-brand-ink/85 sm:block">
-                Trusted tattoo shop directory for clients choosing their next piece.
+                Trusted plumber directory for finding licensed help fast.
               </p>
             </div>
           </header>
@@ -206,9 +206,9 @@ export default async function RootLayout({
           <footer className="w-full border-t border-teal/10 bg-surface">
             <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-5 text-xs text-foreground/80 sm:px-6 lg:px-8">
               <p>
-                © {new Date().getFullYear()} TattooShopDirectories.com. For
+                © {new Date().getFullYear()} PlumbersDirectories.com. For
                 informational purposes only – always verify licensing,
-                certifications, and safety requirements with your local authority.
+                insurance, and permits with your local authority.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/about" className="hover:text-teal-soft">
@@ -224,7 +224,7 @@ export default async function RootLayout({
                   Advertise
                 </Link>
                 <Link href="/advertise" className="hover:text-teal-soft">
-                  For tattoo shops &amp; artists
+                  For plumbing businesses
                 </Link>
                 <Link href="/advertise" className="hover:text-teal-soft">
                   Featured Listing
