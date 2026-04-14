@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Narwhal Plumbing & Heating Ltd",
+    "category": "Plumber",
+    "phone": "+1 867-979-6350",
+    "website": "",
+    "address": "1336 Ulu Lane, Iqaluit, NU X0A 0A1",
+    "city": "Iqaluit",
+    "state": "Nunavut",
+    "postal_code": "X0A 0A1",
+    "country_code": "CA",
+    "latitude": 63.752688,
+    "longitude": -68.5303203,
+    "rating": 5.0,
+    "reviews": 6,
+    "place_id": "ChIJ-SGxITMW000R09qoR40tEhQ",
+    "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ-SGxITMW000R09qoR40tEhQ"
+  }
+]

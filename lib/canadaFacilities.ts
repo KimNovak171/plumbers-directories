@@ -8,7 +8,7 @@ import path from "path";
  * and loads each in one batch (`readFileSync` + try/catch → [] per file).
  *
  * Maps URLs (CRITICAL):
- * - With non-empty `place_id`: `https://www.google.com/maps/place/?q=place_id:` + encoded place_id value.
+ * - With non-empty `place_id`: `https://www.google.com/maps/place/?q=place_id:{place_id}` (value used as in export).
  * - If `place_id` is missing or empty: `https://www.google.com/maps/search/?api=1&query=` + encoded full address.
  *
  * Homepage and `/canada` use `getCanadaNationwideStats()` / `getCanadaDirectoryIndex()` (derived from
@@ -182,7 +182,7 @@ function buildCanadaMapsUrl(
 ): string | undefined {
   const pid = (placeId ?? "").trim();
   if (pid) {
-    return `https://www.google.com/maps/place/?q=place_id:${encodeURIComponent(pid)}`;
+    return `https://www.google.com/maps/place/?q=place_id:${pid}`;
   }
   const addr = fullAddress.trim();
   if (addr) {
