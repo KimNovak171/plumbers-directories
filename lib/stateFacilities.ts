@@ -31,15 +31,19 @@ type AlternateFormatFacilityRaw = {
   type?: string;
   /** Google-style category (common in scraped exports). */
   subtypes?: string;
+  /** Primary category label in many exports (e.g. "Plumber"). */
+  category?: string;
   address: string;
   city: string;
   state: string;
   country?: string;
+  country_code?: string;
   phone?: string | null;
   website?: string | null;
   rating?: number | null;
   reviews?: number | null;
   place_id?: string | null;
+  maps_url?: string | null;
   recommended?: boolean;
   featured?: boolean;
   premium?: boolean;
@@ -74,9 +78,11 @@ function transformAlternateFormatFacilities(
     const fullAddress = (f.address ?? "").trim();
     const mapsUrl = f.place_id
       ? `https://search.google.com/local/reviews?placeid=${f.place_id}&q=*&authuser=0&hl=en&gl=US`
-      : fullAddress
-        ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`
-        : undefined;
+      : (f.maps_url ?? "").trim()
+        ? (f.maps_url as string).trim()
+        : fullAddress
+          ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`
+          : undefined;
     return {
       id,
       name: (f.name ?? "").trim() || "Unnamed",
@@ -92,7 +98,13 @@ function transformAlternateFormatFacilities(
       rating: f.rating ?? null,
       reviewCount: f.reviews ?? null,
       careTypes: (() => {
-        const label = (f.care_type ?? f.type ?? f.subtypes ?? "").trim();
+        const label = (
+          f.care_type ??
+          f.type ??
+          f.subtypes ??
+          f.category ??
+          ""
+        ).trim();
         return label ? [label] : [];
       })(),
       featured: f.featured ?? undefined,
