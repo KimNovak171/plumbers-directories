@@ -11,7 +11,7 @@ import {
   plumberCategorySchemaThings,
 } from "@/lib/careTypesProse";
 
-const siteUrl = "https://plumbersdirectories.com";
+const siteUrl = "https://plumberdirectories.com";
 
 type StatePageProps = {
   params: Promise<{ stateSlug: string }>;
@@ -28,7 +28,7 @@ export async function generateMetadata({
 
   const { stateName, totalFacilities, cities } = await getStateSummary(safeSlug);
 
-  const title = `Plumbers in ${stateName} | ${totalFacilities.toLocaleString()} Verified Listings | PlumbersDirectories.com`;
+  const title = `Plumbers in ${stateName} | ${totalFacilities.toLocaleString()} Verified Listings | PlumberDirectories.com`;
 
   const descriptor = `Browse ${totalFacilities.toLocaleString()} verified plumbers and plumbing contractors across ${cities.length.toLocaleString()} ${stateName} cities. Find drain, septic, and water heater help — all rated 3 stars or higher on Google Maps.`;
 
@@ -45,7 +45,7 @@ export async function generateMetadata({
       title,
       description: descriptor,
       url: canonicalPath,
-      siteName: "PlumbersDirectories.com",
+      siteName: "PlumberDirectories.com",
       type: "website",
       images: [
         {
@@ -97,7 +97,7 @@ export default async function StatePage({ params }: StatePageProps) {
       {
         "@type": "ListItem",
         position: 1,
-        name: "PlumbersDirectories.com",
+        name: "PlumberDirectories.com",
         item: `${siteUrl}/`,
       },
       {
@@ -147,7 +147,7 @@ export default async function StatePage({ params }: StatePageProps) {
     url: `${siteUrl}/${resolvedStateSlug}`,
     isPartOf: {
       "@type": "WebSite",
-      name: "PlumbersDirectories.com",
+      name: "PlumberDirectories.com",
       url: `${siteUrl}/`,
     },
     about: [

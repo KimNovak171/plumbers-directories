@@ -16,29 +16,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://plumbersdirectories.com"),
+  metadataBase: new URL("https://plumberdirectories.com"),
   title: {
-    default: "PlumbersDirectories.com | Plumber Directory",
-    template: "%s | PlumbersDirectories.com",
+    default: "PlumberDirectories.com | Plumber Directory",
+    template: "%s | PlumberDirectories.com",
   },
   description:
-    "PlumbersDirectories.com is a professional, easy-to-use plumber directory helping homeowners and businesses find licensed plumbers, plumbing services, drain cleaning, septic work, and water heater help across the United States and Canada.",
+    "PlumberDirectories.com is a professional, easy-to-use plumber directory helping homeowners and businesses find licensed plumbers, plumbing services, drain cleaning, septic work, and water heater help across the United States and Canada.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "PlumbersDirectories.com | Plumber Directory",
+    title: "PlumberDirectories.com | Plumber Directory",
     description:
       "Trusted resource to explore and compare local plumbers, plumbing contractors, and drainage services across North America.",
     url: "/",
-    siteName: "PlumbersDirectories.com",
+    siteName: "PlumberDirectories.com",
     type: "website",
     images: [
       {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "PlumbersDirectories.com logo preview",
+        alt: "PlumberDirectories.com logo preview",
       },
     ],
   },
@@ -88,9 +88,9 @@ export default async function RootLayout({
                 <Link
                   href="/"
                   className="text-[11px] font-bold tracking-[0.28em] sm:text-xs text-brand-ink transition-colors hover:opacity-80"
-                  aria-label="PlumbersDirectories.com – go to homepage"
+                  aria-label="PlumberDirectories.com – go to homepage"
                 >
-                  PlumbersDirectories.com
+                  PlumberDirectories.com
                 </Link>
                 <nav className="flex items-center gap-4" aria-label="Main navigation">
                   <Link
@@ -206,7 +206,7 @@ export default async function RootLayout({
           <footer className="w-full border-t border-teal/10 bg-surface">
             <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-5 text-xs text-foreground/80 sm:px-6 lg:px-8">
               <p>
-                © {new Date().getFullYear()} PlumbersDirectories.com. For
+                © {new Date().getFullYear()} PlumberDirectories.com. For
                 informational purposes only – always verify licensing,
                 insurance, and permits with your local authority.
               </p>

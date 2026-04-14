@@ -13,9 +13,9 @@ export function generateMetadata({
 
   return {
     title: `Plumbers in ${regionCode}`,
-    description: `Explore plumber listings in ${regionCode} with PlumbersDirectories.com.`,
+    description: `Explore plumber listings in ${regionCode} with PlumberDirectories.com.`,
     openGraph: {
-      title: `Plumbers in ${regionCode} | PlumbersDirectories.com`,
+      title: `Plumbers in ${regionCode} | PlumberDirectories.com`,
       description: `Browse plumbers and plumbing contractors in ${regionCode}.`,
       url: `/locations/${params.region}`,
       type: "website",

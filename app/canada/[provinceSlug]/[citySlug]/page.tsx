@@ -11,7 +11,7 @@ import {
   plumberCategorySchemaThings,
 } from "@/lib/careTypesProse";
 
-const siteUrl = "https://plumbersdirectories.com";
+const siteUrl = "https://plumberdirectories.com";
 
 type CanadaCityPageProps = {
   params: Promise<{ provinceSlug: string; citySlug: string }>;
@@ -41,7 +41,7 @@ export async function generateMetadata({
       title,
       description,
       url: canonicalPath,
-      siteName: "PlumbersDirectories.com",
+      siteName: "PlumberDirectories.com",
       type: "website",
       images: [
         {
@@ -102,7 +102,7 @@ export default async function CanadaCityPage({ params }: CanadaCityPageProps) {
       {
         "@type": "ListItem",
         position: 1,
-        name: "PlumbersDirectories.com",
+        name: "PlumberDirectories.com",
         item: `${siteUrl}/`,
       },
       {
@@ -133,7 +133,7 @@ export default async function CanadaCityPage({ params }: CanadaCityPageProps) {
     url: `${siteUrl}/canada/${provinceSlugNorm}/${citySlugNorm}`,
     isPartOf: {
       "@type": "WebSite",
-      name: "PlumbersDirectories.com",
+      name: "PlumberDirectories.com",
       url: `${siteUrl}/`,
     },
     about: [

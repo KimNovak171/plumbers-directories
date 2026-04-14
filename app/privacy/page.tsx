@@ -4,17 +4,17 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy | Plumber Directories",
   description:
-    "Privacy policy for PlumbersDirectories.com. How we collect, use, and protect your information when you use our plumber directory.",
+    "Privacy policy for PlumberDirectories.com. How we collect, use, and protect your information when you use our plumber directory.",
   alternates: {
     canonical: "/privacy",
     languages: {
-      "en-us": "https://plumbersdirectories.com/privacy",
+      "en-us": "https://plumberdirectories.com/privacy",
     },
   },
   openGraph: {
     title: "Privacy Policy | Plumber Directories",
     url: "/privacy",
-    siteName: "PlumbersDirectories.com",
+    siteName: "PlumberDirectories.com",
     type: "website",
   },
 };
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
         <section className="space-y-4 text-sm text-slate-700">
           <h2 className="text-lg font-semibold text-navy">1. Introduction</h2>
           <p>
-            PlumbersDirectories.com (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) operates a directory website that helps clients find and compare plumbers and plumbing contractors across the United States and Canada. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.
+            PlumberDirectories.com (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) operates a directory website that helps clients find and compare plumbers and plumbing contractors across the United States and Canada. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.
           </p>
 
           <h2 className="text-lg font-semibold text-navy">2. Information We Collect</h2>

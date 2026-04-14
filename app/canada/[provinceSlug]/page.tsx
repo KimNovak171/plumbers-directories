@@ -10,7 +10,7 @@ import {
   plumberCategorySchemaThings,
 } from "@/lib/careTypesProse";
 
-const siteUrl = "https://plumbersdirectories.com";
+const siteUrl = "https://plumberdirectories.com";
 
 type ProvincePageProps = {
   params: Promise<{ provinceSlug: string }>;
@@ -40,7 +40,7 @@ export async function generateMetadata({
       title,
       description: descriptor,
       url: canonicalPath,
-      siteName: "PlumbersDirectories.com",
+      siteName: "PlumberDirectories.com",
       type: "website",
       images: [
         {
@@ -93,7 +93,7 @@ export default async function ProvincePage({ params }: ProvincePageProps) {
       {
         "@type": "ListItem",
         position: 1,
-        name: "PlumbersDirectories.com",
+        name: "PlumberDirectories.com",
         item: `${siteUrl}/`,
       },
       {
@@ -149,7 +149,7 @@ export default async function ProvincePage({ params }: ProvincePageProps) {
     url: `${siteUrl}/canada/${resolvedProvinceSlug}`,
     isPartOf: {
       "@type": "WebSite",
-      name: "PlumbersDirectories.com",
+      name: "PlumberDirectories.com",
       url: `${siteUrl}/`,
     },
     about: [

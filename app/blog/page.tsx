@@ -5,14 +5,14 @@ import { getAllPosts } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Guides and articles on hiring plumbers, emergency repairs, drain and septic care, water heaters, and home plumbing from PlumbersDirectories.com.",
+    "Guides and articles on hiring plumbers, emergency repairs, drain and septic care, water heaters, and home plumbing from PlumberDirectories.com.",
   alternates: {
     canonical: "/blog",
   },
   openGraph: {
-    title: "Blog | PlumbersDirectories.com",
+    title: "Blog | PlumberDirectories.com",
     url: "/blog",
-    siteName: "PlumbersDirectories.com",
+    siteName: "PlumberDirectories.com",
     type: "website",
   },
 };

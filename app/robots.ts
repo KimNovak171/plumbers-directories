@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://plumbersdirectories.com/sitemap.xml",
+    sitemap: "https://plumberdirectories.com/sitemap.xml",
   };
 }

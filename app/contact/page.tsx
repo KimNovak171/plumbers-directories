@@ -5,31 +5,31 @@ import { ContactForm } from "./ContactForm";
 export const metadata: Metadata = {
   title: "Contact Us | Plumber Directories",
   description:
-    "Get in touch with PlumbersDirectories.com. Send a message or email hello@directoriesnetwork.com for questions about our directory or featured listings.",
+    "Get in touch with PlumberDirectories.com. Send a message or email hello@directoriesnetwork.com for questions about our directory or featured listings.",
   alternates: {
     canonical: "/contact",
     languages: {
-      "en-us": "https://plumbersdirectories.com/contact",
+      "en-us": "https://plumberdirectories.com/contact",
     },
   },
   openGraph: {
     title: "Contact Us | Plumber Directories",
     description:
-      "Contact PlumbersDirectories.com for questions about our directory or featured listings.",
+      "Contact PlumberDirectories.com for questions about our directory or featured listings.",
     url: "/contact",
-    siteName: "PlumbersDirectories.com",
+    siteName: "PlumberDirectories.com",
     type: "website",
   },
 };
 
-const siteUrl = "https://plumbersdirectories.com";
+const siteUrl = "https://plumberdirectories.com";
 
 export default function ContactPage() {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "PlumbersDirectories.com", item: `${siteUrl}/` },
+      { "@type": "ListItem", position: 1, name: "PlumberDirectories.com", item: `${siteUrl}/` },
       { "@type": "ListItem", position: 2, name: "Contact", item: `${siteUrl}/contact` },
     ],
   };

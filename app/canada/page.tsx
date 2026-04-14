@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       url: "/canada",
-      siteName: "PlumbersDirectories.com",
+      siteName: "PlumberDirectories.com",
       type: "website",
       images: [
         {

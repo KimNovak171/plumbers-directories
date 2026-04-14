@@ -4,17 +4,17 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About This Directory | Plumber Directories",
   description:
-    "Learn about PlumbersDirectories.com — a trusted directory helping clients compare licensed plumbers, plumbing contractors, drain services, and septic providers across the US and Canada.",
+    "Learn about PlumberDirectories.com — a trusted directory helping clients compare licensed plumbers, plumbing contractors, drain services, and septic providers across the US and Canada.",
   alternates: {
     canonical: "/about",
     languages: {
-      "en-us": "https://plumbersdirectories.com/about",
+      "en-us": "https://plumberdirectories.com/about",
     },
   },
   openGraph: {
     title: "About This Directory | Plumber Directories",
     url: "/about",
-    siteName: "PlumbersDirectories.com",
+    siteName: "PlumberDirectories.com",
     type: "website",
   },
 };
@@ -30,7 +30,7 @@ export default function AboutPage() {
           About This Directory
         </h1>
         <p className="max-w-3xl text-sm text-slate-600">
-          PlumbersDirectories.com is a professional, easy-to-use directory that
+          PlumberDirectories.com is a professional, easy-to-use directory that
           helps clients find and compare plumbers and plumbing contractors across
           the United States and Canada.
         </p>

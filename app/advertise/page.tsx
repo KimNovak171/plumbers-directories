@@ -4,11 +4,11 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Advertise | Get Your Business in Front of Clients",
   description:
-    "Featured and premium listings on PlumbersDirectories.com. Reach homeowners and businesses actively searching for licensed plumbers, drain cleaning, septic services, and water heater help across the United States.",
+    "Featured and premium listings on PlumberDirectories.com. Reach homeowners and businesses actively searching for licensed plumbers, drain cleaning, septic services, and water heater help across the United States.",
   alternates: {
     canonical: "/advertise",
     languages: {
-      "en-us": "https://plumbersdirectories.com/advertise",
+      "en-us": "https://plumberdirectories.com/advertise",
     },
   },
   openGraph: {
@@ -16,20 +16,20 @@ export const metadata: Metadata = {
     description:
       "A featured listing puts your business at the top of your city directory section and in front of high-intent visitors choosing a plumber or plumbing contractor.",
     url: "/advertise",
-    siteName: "PlumbersDirectories.com",
+    siteName: "PlumberDirectories.com",
     type: "website",
     images: [
       {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "PlumbersDirectories.com advertise preview",
+        alt: "PlumberDirectories.com advertise preview",
       },
     ],
   },
 };
 
-const siteUrl = "https://plumbersdirectories.com";
+const siteUrl = "https://plumberdirectories.com";
 const STRIPE_LINK_49 =
   "https://buy.stripe.com/3cI14n9YmcXZ1xIf1TfAc0I";
 const STRIPE_LINK_99 =
@@ -43,7 +43,7 @@ export default function AdvertisePage() {
       {
         "@type": "ListItem",
         position: 1,
-        name: "PlumbersDirectories.com",
+        name: "PlumberDirectories.com",
         item: `${siteUrl}/`,
       },
       {
@@ -70,7 +70,7 @@ export default function AdvertisePage() {
           Get Your Business in Front of Clients Who Are Ready to Hire
         </h1>
         <p className="max-w-3xl text-sm text-slate-600">
-          PlumbersDirectories.com is visited by people actively searching for
+          PlumberDirectories.com is visited by people actively searching for
           licensed plumbers, emergency repairs, drain cleaning, septic service,
           and water heater work across the United States. A featured listing puts
           your business at the top of your city directory section and in front of

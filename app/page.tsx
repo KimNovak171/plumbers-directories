@@ -23,14 +23,14 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       url: "/",
-      siteName: "PlumbersDirectories.com",
+      siteName: "PlumberDirectories.com",
       type: "website",
       images: [
         {
           url: "/og-image.svg",
           width: 1200,
           height: 630,
-          alt: "PlumbersDirectories.com home preview",
+          alt: "PlumberDirectories.com home preview",
         },
       ],
     },
@@ -58,8 +58,8 @@ export default async function Home() {
       {
         "@type": "ListItem",
         position: 1,
-        name: "PlumbersDirectories.com",
-        item: "https://plumbersdirectories.com/",
+        name: "PlumberDirectories.com",
+        item: "https://plumberdirectories.com/",
       },
     ],
   };

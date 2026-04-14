@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPostBySlug, getPostSlugs } from "@/lib/blog";
 
-const siteUrl = "https://plumbersdirectories.com";
+const siteUrl = "https://plumberdirectories.com";
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>;
@@ -39,7 +39,7 @@ export async function generateMetadata({
       title: post.title,
       description: post.description,
       url: canonicalPath,
-      siteName: "PlumbersDirectories.com",
+      siteName: "PlumberDirectories.com",
       type: "article",
       publishedTime: post.date,
     },
